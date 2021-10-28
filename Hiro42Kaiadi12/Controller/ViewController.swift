@@ -10,4 +10,3 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet private weak var customView: InputView!
 }
-

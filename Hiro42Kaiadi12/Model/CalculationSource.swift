@@ -13,15 +13,15 @@ class CalculationSource {
 
     ///　イニシャライザ
     /// - Parameters:
-    ///   - amount: taxTextFieldで入力した値
-    ///   - tax: amountTextFieldで入力した値
+    ///   - amount: 金額の設定
+    ///   - tax: 税率の設定
     init(amount: Double, tax: Double) {
         self.amount = amount
-        self.tax = tax / 100
+        self.tax = tax / 100.00 + 1.0
     }
     /// 計算メソッド
     /// - Returns:  税込金額
     func caluclator() -> Double {
-        return (amount * tax) + amount
+        return amount * tax
     }
 }

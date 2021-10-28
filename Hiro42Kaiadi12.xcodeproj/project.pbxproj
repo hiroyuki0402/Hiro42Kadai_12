@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5E6DE5272AAA44006AD9F0 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E6DE4272AAA44006AD9F0 /* Util.swift */; };
 		3BE052E9272977CC00339F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE052E8272977CC00339F12 /* AppDelegate.swift */; };
 		3BE052EB272977CC00339F12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE052EA272977CC00339F12 /* SceneDelegate.swift */; };
 		3BE052ED272977CC00339F12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE052EC272977CC00339F12 /* ViewController.swift */; };
@@ -15,6 +16,9 @@
 		3BE052F5272977CE00339F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE052F3272977CE00339F12 /* LaunchScreen.storyboard */; };
 		3BE05300272977CE00339F12 /* Hiro42Kaiadi12Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE052FF272977CE00339F12 /* Hiro42Kaiadi12Tests.swift */; };
 		3BE0530B272977CE00339F12 /* Hiro42Kaiadi12UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0530A272977CE00339F12 /* Hiro42Kaiadi12UITests.swift */; };
+		3BE053192729780900339F12 /* InputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BE053182729780900339F12 /* InputView.xib */; };
+		3BE0531B2729784100339F12 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0531A2729784100339F12 /* InputView.swift */; };
+		3BE0531D27297A3200339F12 /* CalculationSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0531C27297A3200339F12 /* CalculationSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B5E6DE4272AAA44006AD9F0 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		3BE052E5272977CC00339F12 /* Hiro42Kaiadi12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hiro42Kaiadi12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE052E8272977CC00339F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BE052EA272977CC00339F12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,9 @@
 		3BE05306272977CE00339F12 /* Hiro42Kaiadi12UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hiro42Kaiadi12UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE0530A272977CE00339F12 /* Hiro42Kaiadi12UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hiro42Kaiadi12UITests.swift; sourceTree = "<group>"; };
 		3BE0530C272977CE00339F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BE053182729780900339F12 /* InputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputView.xib; sourceTree = "<group>"; };
+		3BE0531A2729784100339F12 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		3BE0531C27297A3200339F12 /* CalculationSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B5E6DDE272A98AC006AD9F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3BE0531A2729784100339F12 /* InputView.swift */,
+				3BE052EC272977CC00339F12 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B5E6DDF272A98B8006AD9F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3BE052EE272977CC00339F12 /* Main.storyboard */,
+				3B5E6DE2272A98F0006AD9F0 /* InputView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B5E6DE0272A98C9006AD9F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BE0531C27297A3200339F12 /* CalculationSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B5E6DE1272A98D4006AD9F0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3B5E6DE4272AAA44006AD9F0 /* Util.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3B5E6DE2272A98F0006AD9F0 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				3BE053182729780900339F12 /* InputView.xib */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
 		3BE052DC272977CC00339F12 = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +149,12 @@
 		3BE052E7272977CC00339F12 /* Hiro42Kaiadi12 */ = {
 			isa = PBXGroup;
 			children = (
+				3B5E6DE1272A98D4006AD9F0 /* Utils */,
+				3B5E6DE0272A98C9006AD9F0 /* Model */,
+				3B5E6DDF272A98B8006AD9F0 /* View */,
+				3B5E6DDE272A98AC006AD9F0 /* Controller */,
 				3BE052E8272977CC00339F12 /* AppDelegate.swift */,
 				3BE052EA272977CC00339F12 /* SceneDelegate.swift */,
-				3BE052EC272977CC00339F12 /* ViewController.swift */,
-				3BE052EE272977CC00339F12 /* Main.storyboard */,
 				3BE052F1272977CE00339F12 /* Assets.xcassets */,
 				3BE052F3272977CE00339F12 /* LaunchScreen.storyboard */,
 				3BE052F6272977CE00339F12 /* Info.plist */,
@@ -138,6 +190,7 @@
 				3BE052E1272977CC00339F12 /* Sources */,
 				3BE052E2272977CC00339F12 /* Frameworks */,
 				3BE052E3272977CC00339F12 /* Resources */,
+				3B5E6DE3272A9A97006AD9F0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -232,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BE052F5272977CE00339F12 /* LaunchScreen.storyboard in Resources */,
+				3BE053192729780900339F12 /* InputView.xib in Resources */,
 				3BE052F2272977CE00339F12 /* Assets.xcassets in Resources */,
 				3BE052F0272977CC00339F12 /* Main.storyboard in Resources */,
 			);
@@ -253,13 +307,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B5E6DE3272A9A97006AD9F0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3BE052E1272977CC00339F12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3BE052ED272977CC00339F12 /* ViewController.swift in Sources */,
+				3BE0531B2729784100339F12 /* InputView.swift in Sources */,
 				3BE052E9272977CC00339F12 /* AppDelegate.swift in Sources */,
+				3BE0531D27297A3200339F12 /* CalculationSource.swift in Sources */,
+				3B5E6DE5272AAA44006AD9F0 /* Util.swift in Sources */,
 				3BE052EB272977CC00339F12 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
