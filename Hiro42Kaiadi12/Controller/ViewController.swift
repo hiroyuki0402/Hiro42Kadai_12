@@ -19,18 +19,20 @@ class ViewController: UIViewController {
 
         customView.delegate = self
 
-        customView.taxTextField.text = String(
-            UserDefaults.standard.integer(forKey: UserDefaultKey.tax)
+        customView.tax = Double(
+            UserDefaults.standard.integer(
+                forKey: UserDefaultKey.tax
+            )
         )
     }
 }
 
 extension ViewController: InputViewDelegate {
     func didTapCalculationButton() {
-        guard let amount = Double(customView.amountTextField.text ?? "") else {return}
-        guard let tax = Double(customView.taxTextField.text ?? "") else {return}
+        guard let amount = customView.amount else {return}
+        guard let tax = customView.tax else {return}
         let result = CalculationSource().calculate(amount: Double(amount), tax: Double(tax))
-        customView.resultLabel.text = CustomNumberFormatter.floor(number: result)
+        customView.result = CustomNumberFormatter.floor(number: result)
         UserDefaults.standard.set(Int(tax), forKey: UserDefaultKey.tax)
     }
 }

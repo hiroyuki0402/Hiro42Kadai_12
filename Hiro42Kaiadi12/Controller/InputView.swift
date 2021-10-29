@@ -12,10 +12,32 @@ protocol InputViewDelegate: AnyObject {
 }
 
 class InputView: UIView {
-    @IBOutlet private(set) weak var amountTextField: UITextField!
-    @IBOutlet private(set) weak var taxTextField: UITextField!
-    @IBOutlet private(set) weak var resultLabel: UILabel!
+    @IBOutlet private weak var amountTextField: UITextField!
+    @IBOutlet private weak var taxTextField: UITextField!
+    @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var customView: UIView!
+
+    var tax: Double? {
+        get {
+            Double(taxTextField.text ?? "")
+        }
+        set {
+            taxTextField.text = newValue.map { String($0) }
+        }
+    }
+
+    var amount: Double? {
+        Double(amountTextField.text ?? "")
+    }
+
+    var result: String? {
+        get {
+            resultLabel.text
+        }
+        set {
+            resultLabel.text = newValue
+        }
+    }
 
     weak var delegate: InputViewDelegate?
 
