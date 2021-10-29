@@ -7,9 +7,8 @@
 
 import UIKit
 
-private enum UserDefaultKey: String {
-    case tax
-    case val
+private enum UserDefaultKey {
+    static let tax = "tax"
 }
 
 class ViewController: UIViewController {
@@ -20,9 +19,9 @@ class ViewController: UIViewController {
 
         customView.delegate = self
 
-        if let loadingData = UserDefaults.standard.loading(key: .tax) {
-            customView.taxTextField.text = loadingData
-        }
+        customView.taxTextField.text = String(
+            UserDefaults.standard.integer(forKey: UserDefaultKey.tax)
+        )
     }
 }
 
@@ -32,16 +31,6 @@ extension ViewController: InputViewDelegate {
         guard let tax = Double(customView.taxTextField.text ?? "") else {return}
         let result = CalculationSource().calculate(amount: Double(amount), tax: Double(tax))
         customView.resultLabel.text = CustomNumberFormatter.floor(number: result)
-        UserDefaults.standard.save(value: tax, key: .tax)
-    }
-}
-
-// Fixme: セッターゲッターに変更？Foilの使用?
-private extension UserDefaults {
-    func save(value: Any, key: UserDefaultKey) {
-        set(value, forKey: key.rawValue)
-    }
-    func loading(key: UserDefaultKey) -> String? {
-        return string(forKey: key.rawValue)
+        UserDefaults.standard.set(Int(tax), forKey: UserDefaultKey.tax)
     }
 }
