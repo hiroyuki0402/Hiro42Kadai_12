@@ -31,8 +31,7 @@ class InputView: UIView {
     @IBAction private func calculationButton(_ sender: Any) {
         guard let amount = Double(amountTextField.text ?? "") else {return}
         guard let tax = Double(taxTextField.text ?? "") else {return}
-        let cal = CalculationSource(amount: Double(amount), tax: Double(tax))
-        let result = cal.caluclator()
+        let result = CalculationSource().calculate(amount: Double(amount), tax: Double(tax))
         resultLabel.text = Utils.stringFormatter(number: result)
         UserDefaults.standard.save(value: tax, key: .tax)
     }
