@@ -6,11 +6,12 @@
 //
 
 import Foundation
-class Utils {
+
+class CustomNumberFormatter {
     /// Formatterの変更
     /// - Parameter number: 計算した値を設定
     /// - Returns: 小数点以下切り捨て
-    class func stringFormatter(number: Double) -> String {
+    class func floor(number: Double) -> String {
         let formatter = NumberFormatter()
         formatter.roundingMode = .floor
         return formatter.string(from: NSNumber(value: number)) ?? ""

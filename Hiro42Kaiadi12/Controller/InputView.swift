@@ -32,7 +32,7 @@ class InputView: UIView {
         guard let amount = Double(amountTextField.text ?? "") else {return}
         guard let tax = Double(taxTextField.text ?? "") else {return}
         let result = CalculationSource().calculate(amount: Double(amount), tax: Double(tax))
-        resultLabel.text = Utils.stringFormatter(number: result)
+        resultLabel.text = CustomNumberFormatter.floor(number: result)
         UserDefaults.standard.save(value: tax, key: .tax)
     }
 }
